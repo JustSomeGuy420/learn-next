@@ -8,11 +8,25 @@
         // Select the div element with 'app' id
         const app = document.getElementById("app");
         
+        // Create header react component
+        function Header() {
+            return <h1>Develop. Preview. Ship.</h1>;
+        }
+
+        // Create homepage react component
+        function HomePage() {
+            return (
+                <>
+                    <Header />
+                </>
+            );
+        }
+
         // Create a root using the 'app' div
         const root = ReactDOM.createRoot(app);
 
-        // render h1 element in root container
-        root.render(<h1>Develop. Preview. Ship.</h1>);
+        // render custom component in root container
+        root.render(<HomePage />);
     </script>
   </body>
 </html>
