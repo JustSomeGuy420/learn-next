@@ -9,15 +9,25 @@
         const app = document.getElementById("app");
         
         // Create header react component
-        function Header() {
-            return <h1>Develop. Preview. Ship.</h1>;
+        function Header({ title }) {
+            return <h1>{title ? title : 'Default title'}</h1>;
         }
 
         // Create homepage react component
         function HomePage() {
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
             return (
                 <>
-                    <Header />
+                    // Pass Title Using Props
+                    <Header title="React"/>
+                    <Header title="A new title" />
+
+                    <ul>
+                        {names.map((name) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                    </ul>
                 </>
             );
         }
